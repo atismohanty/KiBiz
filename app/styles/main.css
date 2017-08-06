@@ -1,0 +1,388 @@
+.formsearch
+{
+  border-radius: 30px;
+  width: 200px;
+  -webkit-transition: width 1s;
+  transition: width .5s;
+  font-size: medium;
+  padding-left:15px;
+  padding-right:15px;
+  padding-top:3px;
+  padding-bottom:3px;
+  outline: none;
+}
+.formsearch:focus
+{
+  border-radius: 20px;
+  width: 240px;
+  font-size: medium;
+}
+
+.iconstyle
+{
+  right: 15%;
+  height: 10px;
+  width: 10px;
+  line-height: 20px;
+  top: 2px;
+}
+
+.container-search
+{
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  top: 0px;
+  background-color: white;
+
+}
+.wells
+{
+  background-color: white;
+  border: none;
+  margin: 0px;
+  border: solid 2px white;
+}
+.panel-userinfo{
+  height:5%;
+  width:5%;
+}
+.btntransparent,.btntransparent:hover,focus,active
+{
+  background-color: transparent;
+  border:grey;
+  border-radius: 100px;
+  height: 5%;
+  width: 5%;
+  position: relative;
+  top: 2%;
+}
+.navbar
+{
+border-radius: 0px !important;
+margin: 0px;
+}
+.input-group-btn
+{
+  border: none;
+  background-color: white;
+}
+.input-group-btn: hover, pressed
+{
+  border: none;
+  background-color: white;
+}
+.wrapper-main
+{
+  background-color: white;
+  width: 100%;
+  height: 85vh;
+  display: inline-block;
+  margin: 2px;
+  padding: 0px;
+  position: relative;
+  margin: 0px;
+  width: 100%;
+
+}
+.wraper-sidebar
+{
+ 
+  position: relative;
+  height: 85vh;
+  display: inline-block;
+  padding: 0px !important;
+  margin: auto;
+  border: 1px solid blue;
+  overflow-y: auto;
+}
+
+.wraper-sidebar::-webkit-scrollbar
+{
+  width: 5px;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+
+
+.wraper-sidebar:hover
+{
+  
+  overflow-y: auto;
+  /*background-color: grey; */
+  
+}
+
+
+ 
+.sidebar-items
+{
+  position: relative;
+  display:inline-table;
+  width: 95%;
+  height: 150px;
+  background-color:white;
+  border: 1px solid rgba(0, 0, 255, 0.23);
+  border-radius: 5px;
+  margin-left: 4%;
+  margin-bottom: 2px;
+}
+
+.sidebar-items>p
+{
+  margin: 0px;
+  padding: 2px;
+  color: blue;
+  font-size: 10px;
+  height: auto;
+  text-align: center;
+}
+.img-sidebar
+{
+
+width: inherit;
+height: initial;
+margin: auto;
+display: block;
+width: 100%;
+height: 100%;
+
+}
+.sidebar-float-text
+{
+    position: absolute;
+    z-index: 30;
+    bottom: 0px;
+    background-color: rgba(0, 0, 0, 0.69);
+    width: 95%;
+    margin-left: 2.5%;
+
+}
+.sidebar-float-text>p
+{
+  padding:0px;
+  margin:0px;
+  text-align: center;
+  color: red;
+  font-weight: bolder;
+  font-size: 11px;
+}
+.wrapper-carousel
+{
+height: 50vh;
+margin: 0px;
+padding: 0px;
+position: relative;
+background-color: black;
+
+
+}
+.carousel-inner
+{
+  height: 50vh;
+  padding: 0px !important;
+  margin: 0px !important;
+  width: 100% !important;
+
+}
+.carousel-indicators
+{
+  bottom: 0px;
+  margin-bottom: 0px;
+
+}
+.carousel-inner > .item > img
+{
+  display: block;
+  margin: auto;
+}
+.carousel-inner > .item
+{
+height: inherit;
+}
+
+.menu-container
+{
+position: relative;
+display: block;
+padding: 0px;
+margin: 3% 4% 3% 4%;
+background-color: transparent;
+border: .5px solid;
+
+}
+.card-container
+{
+  border-width: 1px solid !important;
+  border-radius: 2px !important;
+}
+
+
+.cardmenu
+{
+  
+  width: 150px;
+  height: 20vh;
+  border-radius: 5px;
+  border-style: outset;
+
+}
+.card-image
+{
+width: 100%;
+height: 100%;
+background-color: transparent;
+border: none;
+}
+
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  margin: 0px;
+  padding:0px;
+
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 0px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 0px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 0px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+body {
+  font-family: 'Open Sans', 'sans-serif',arial;
+}
+.mega-dropdown {
+  position: static !important;
+  
+}
+.mega-dropdown-menu {
+    padding: 20px 0px;
+    width: 100%;
+    box-shadow: none;
+    background-color: #222;
+    -webkit-box-shadow: none;
+}
+.navbar-nav > li > a {
+ font-size:large;
+ color: white;
+}
+.mega-dropdown-menu > li > ul {
+  padding: 0;
+  margin: 0;
+}
+.mega-dropdown-menu > li > ul > li {
+  list-style: none;
+}
+.mega-dropdown-menu > li > ul > li > a {
+  display: block;
+  color: #222;
+  padding: 3px 5px;
+  font-size: larger;
+  color: white;
+
+}
+.mega-dropdown-menu > li ul > li > a:hover,
+.mega-dropdown-menu > li ul > li > a:focus {
+  text-decoration: none;
+}
+.mega-dropdown-menu .dropdown-header {
+  font-size: 18px;
+  color: #ff3546;
+  padding: 5px 60px 5px 5px;
+  line-height: 30px;
+}
+
+.carousel-control {
+  width: 30px;
+  height: 30px;
+  top: -35px;
+
+}
+.left.carousel-control {
+  right: 30px;
+  left: inherit;
+}
+.carousel-control .glyphicon-chevron-left, 
+.carousel-control .glyphicon-chevron-right {
+  font-size: 12px;
+  background-color: #fff;
+  line-height: 30px;
+  text-shadow: none;
+  color: #333;
+  border: 1px solid #ddd;
+}

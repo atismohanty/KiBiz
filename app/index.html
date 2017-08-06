@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>KiBiz Inc.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    
+    <link rel="stylesheet" href="styles/main.css">
+   
+  </head>
+  <body ng-app="kibizApp">
+    <div class="wells">
+      <img class="image image-responsive" ng-src="{{main.kibiz_logo}}">
+      <div class="col-sm-4 pull-right">
+        <div class="dropdown pull-right">
+          <button class="btn btn-default dropdown-toggle pull-right btntransparent" type="button" data-toggle="dropdown" data-target="#userOption">
+            <span class="glyphicon glyphicon-user"></span>
+          </button>
+        
+          <ul class="dropdown-menu col-sm-2">
+            <li>{{userName}}</li>
+            <li>{{}}</li>
+            <li>Sign Out</li>
+            <li>User Account</li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="header col-sm-12">
+      <div class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/"></a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+
+            <ul class="nav navbar-nav navbar-left">
+              <li class="active"><a href="#/">Home</a></li>
+
+              <li class="dropdown mega-dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Products<span class="caret"></a>
+                <ul class="dropdown-menu mega-dropdown-menu">
+                  <li class="col-sm-2">
+                    <ul>
+                      <li class="dropdown-header">Product Action </li>
+                      <li><a ng-src="/#"> New Product </a> </li>
+                      <li><a ng-src="/#"> Product List</a> </li>
+                      <li><a ng-src="/#"> Product Grid</a> </li>
+                    </ul>
+                  </li>
+                  <li class="col-sm-2">
+                    <ul>
+                      <li class="dropdown-header"> Product Pricing </li>
+                      <li><a ng-src="/#"> Price </a></li>
+                      <li><a ng-src="/#"> Cost </a></li>
+                      <li><a ng-src="/#"> Vendirs </a> </li>
+                      <li><a ng-src="/#"> Product Price </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+<!--  ******************Contact List Dropdown******************** -->
+
+              <li class="dropdown mega-dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown">Contact<span class="caret"></span></a>
+                  <ul class="dropdown-menu mega-dropdown-menu">
+                    <li class="col-sm-2">
+                      <ul>
+                        <li class="dropdown-header"> Contact Action </li>
+                        <li><a ng-src="/#"> New Contact </a></li>
+                        <li><a ng-src="/#"> Contact List</a></li>
+                        <li><a ng-src="/#"> Contact Details</a></li>
+                      </ul>
+                    </li>
+                    <li class="col-sm-2">
+                      <ul>
+                        <li class="dropdown-header"> Contact Info </li>
+                        <li><a ng-src="/#"> Related Contact </a></li>
+                        <li><a ng-src="/#"> Contact Opportunities </a></li>
+                        <li><a ng-src="/#"> Contact Activities </a></li>
+                      </ul>
+                    </li>
+                  </ul>
+              </li>
+
+<!--  ******************Sales List Dropdown******************** -->
+              <li class="dropdown mega-dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown">Sales<span class="caret"></span></a>
+                <ul class="dropdown-menu mega-dropdown-menu">
+                  <li class="col-sm-2">
+                    <ul>
+                      <li class="dropdown-header"> Sales Action </li>
+                      <li><a href="/#"> New Sales </a></li>
+                      <li><a href="/#"> Sales List </a></li>
+                      <li><a href="/#"> Sales Info </a></li>
+                    </ul>
+                  </li>
+
+                   <li class="col-sm-2">
+                    <ul>
+                      <li class="dropdown-header"> Sales Action </li>
+                      <li><a href="/#"> New Sales </a></li>
+                      <li><a href="/#"> Sales List </a></li>
+                      <li><a href="/#"> Sales Info </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          
+             <form class="navbar-form navbar-right">
+
+                <input type="text" class="formsearch" placeholder="Search">
+                <span class="glyphicon glyphicon-search iconstyle"> </span>
+                
+                </form>
+                    <!--
+                    Disabled the glyphicon icon
+                    div class="input-group-btn">
+                      <button class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                    </div-->
+              </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+    <div ng-view="">
+      <!-- Load the data from the partial pages-->
+    </div>
+    
+
+    <div class="footer">
+      <div class="container col-sm-12">
+        <p><span class="col-sm-6"></span>@Copy Rights KiBiz Systems Inc.</p>
+      </div>
+    </div>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
