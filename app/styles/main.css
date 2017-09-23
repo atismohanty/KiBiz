@@ -1,3 +1,9 @@
+html,body
+{
+  height: 100%;
+}
+
+
 .formsearch
 {
   border-radius: 30px;
@@ -74,9 +80,7 @@ margin: 0px;
 }
 .wrapper-main
 {
-  background-color: white;
-  width: 100%;
-  height: 85vh;
+  background:linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
   display: inline-block;
   margin: 2px;
   padding: 0px;
@@ -89,12 +93,15 @@ margin: 0px;
 {
  
   position: relative;
-  height: 85vh;
-  display: inline-block;
+  display: inline-flex;
+  flex-flow: wrap;
   padding: 0px !important;
   margin: auto;
   border: 1px solid blue;
   overflow-y: auto;
+  align-content: space-between;
+  -webkit-align-content: space-between;
+  background-color: black;
 }
 
 .wraper-sidebar::-webkit-scrollbar
@@ -119,14 +126,14 @@ margin: 0px;
 .sidebar-items
 {
   position: relative;
-  display:inline-table;
-  width: 95%;
-  height: 150px;
+  display:block;
+  padding: 1px;
   background-color:white;
   border: 1px solid rgba(0, 0, 255, 0.23);
   border-radius: 5px;
-  margin-left: 4%;
+  
   margin-bottom: 2px;
+  padding: 0px;
 }
 
 .sidebar-items>p
@@ -137,6 +144,7 @@ margin: 0px;
   font-size: 10px;
   height: auto;
   text-align: center;
+  overflow-wrap:all;
 }
 .img-sidebar
 {
@@ -147,6 +155,7 @@ margin: auto;
 display: block;
 width: 100%;
 height: 100%;
+
 
 }
 .sidebar-float-text
@@ -168,23 +177,23 @@ height: 100%;
   font-weight: bolder;
   font-size: 11px;
 }
-.wrapper-carousel
+.wrapper-middle-content
 {
-height: 50vh;
 margin: 0px;
 padding: 0px;
 position: relative;
-background-color: black;
-
-
+background-color: transparent;
 }
+.carousel
+{
+  width: 100%;
+}
+
 .carousel-inner
 {
-  height: 50vh;
+ 
   padding: 0px !important;
   margin: 0px !important;
-  width: 100% !important;
-
 }
 .carousel-indicators
 {
@@ -196,44 +205,83 @@ background-color: black;
 {
   display: block;
   margin: auto;
+  transition: 2s;
 }
 .carousel-inner > .item
 {
-height: inherit;
+  max-height: 60vh;
 }
 
 .menu-container
 {
-position: relative;
-display: block;
-padding: 0px;
-margin: 3% 4% 3% 4%;
-background-color: transparent;
-border: .5px solid;
+    position: relative;
+    display: inline-flex;
+    flex-flow: wrap;
+    padding: 0px;
+    height: 30%;
+    margin: auto;
+    background-color: rgba(3, 18, 25, 0.55);
+    border: .5px solid rgba(158, 158, 158, 0.39);
+    border-style: inset;
+    z-index: 5;
+    box-shadow: 4px 4px 4px rgba(158, 158, 158, 0.26);
+    -webkit-align-content:space-between;
+    align-content: space-between;
 
 }
+
+
 .card-container
 {
+  /*
   border-width: 1px solid !important;
   border-radius: 2px !important;
+  */
+  position: relative;
+  display: block;
+  height: 100%;
+  max-height: 50%;
+  max-width: 50%;
+
 }
 
 
 .cardmenu
 {
   
-  width: 150px;
-  height: 20vh;
+  width: 100%;
+  height:95%;
   border-radius: 5px;
   border-style: outset;
+  display: block;
+  margin: auto;
 
+}
+.card-header
+{
+  height: 10%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.card-title
+{
+  height: 80%;
+  width: 100%;
+}
+.card-footer
+{
+  height: 10%;
+  width: 100%;
 }
 .card-image
 {
 width: 100%;
-height: 100%;
+height: 80%;
 background-color: transparent;
 border: none;
+display: block;
+margin: 
 }
 
 .browsehappy {
@@ -301,7 +349,7 @@ body {
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 100%;
   }
 
   /* Remove the padding we set earlier */
@@ -324,7 +372,9 @@ body {
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
 body {
-  font-family: 'Open Sans', 'sans-serif',arial;
+  font-family: 'Open Sans', 'sans-serif';
+  height: 100%;
+  margin: 0px;
 }
 .mega-dropdown {
   position: static !important;

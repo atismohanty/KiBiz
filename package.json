@@ -39,5 +39,11 @@
   },
   "scripts": {
     "test": "karma start test\\karma.conf.js"
+  },
+  "dependencies": {
+    "angular-google-maps": "^2.4.1",
+    "angular-local-storage": "^0.6.0",
+    "google-maps": "^3.2.1",
+    "localstorage": "^0.1.0"
   }
 }

@@ -1,0 +1,52 @@
+<div class="wrapper-search col-sm-12">
+
+    <!--search header part -->
+  <div class="search-header col-sm-12">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 4px 0px 4px;">
+        <input type=text class="search-text" placeholder="Contact Name" ng-model="contact.searchText.first_name">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="Department Type" ng-model="contact.searchText.department">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="Contact Address" ng-model="contact.searchText.address">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="Contact Phone" ng-model="contact.searchText.phone">
+        </div>
+  </div>
+
+  <div class="container col-sm-12">
+    <table class="table table-bordered table-responsive table-striped col-xs-12">
+      <tr>
+        <th class="col-md-2 col-lg-2"> Contact Name </th>
+        <th class="col-md-2 col-lg-2"> Contact Type </th>
+        <th class="col-md-3 col-lg-3"> Address </th>
+        <th class="col-md-2 col-lg-3"> Email Address </th>
+        <th class="col-md-2 col-lg-3"> Contact Phone </th>
+        <th class="col-md-1 col-lg-1"></th>
+      </tr>
+      </tr>
+
+      <tr id="row{{$index}}" ng-repeat="contact in contactdata | filter:contact.searchText | limitTo:50" class="table-row">
+        <td><input type="text" ng-model="contact.first_name + ' ' + contact.last_name" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+        <td><input type="text" ng-model="contact.department" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+        <td><input type="text" ng-model="contact.address" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+        <td><input type="text" ng-model="contact.email" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+        <td><input type="text" ng-model="contact.phone" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+        <td style="padding:8px 0px 8px 0px; display: inline-block; width: 70px">
+          <button type="button" ng-click="contact.viewRow()" class="col-xs-12 col-sm-12 table-button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+          <button class="col-xs-12 col-sm-12 table-button" ng-click="deleteRow('row'+$index)">
+            <span class="glyphicon glyphicon-trash"></span>
+          </button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</div>

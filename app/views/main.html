@@ -1,7 +1,7 @@
 <div class="wrapper-main">
 
-  <div class="wraper-sidebar col-sm-2 " ng-init="sideBarImage()">
-    <div class="sidebar-items" ng-repeat="productinfo in productData|limitTo:4">
+  <div class="wraper-sidebar col-xs-12 col-sm-2 col-md-2 col-lg-2" ng-init="this.sideBarImage()">
+    <div class="sidebar-items col-xs-6 col-sm-12 col-md-12 col-lg-12" ng-repeat="productinfo in productData|limitTo:4">
         <div ng-repeat="prdinfox in productinfo">
           <div ng-repeat="prdimg in prdinfox.images">
             <img ng-src="{{prdimg.url}}" class="image image-responsive img-sidebar">
@@ -15,7 +15,7 @@
   </div>
 
 
-  <div class="wrapper-carousel col-sm-8">
+  <div class="wrapper-middle-content col-xs-12 col-sm-8 col-md-8 col-lg-8">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
       <!--Carousell for showing the indicators-->
@@ -51,27 +51,27 @@
               </div>
 
           </div>
-    </div> 
+  </div>
 <!--hr style="border:1px solid;padding: 0px;margin: 4px;border-bottom: 3px solid;border-style: outset;"></hr-->
-
-    <div class="well col-sm-11 menu-container">
-        <div class="col-sm-2">
-              <div class="card card-outline text-center">
-                <div class="card-header"><b>Sales Process</b></div>
-                <div class="card-title">
-                  <a ng-href="#">
-                    <img ng-src="{{main.cardmenu1}}"  class="card-image-top image-fluid"></img>
-                  </a>
-                  <div class="card-footer "> Total 100 Sales Made </div>
-                </div>
+  <div class="row col-sm-12 menu-container">
+    
+        <div class="col-xs-12 col-sm-3 col-md-3 card-container" ng-repeat="cards in main.cardmenu|limitTo:4">
+              <div class="card cardmenu">
+                <div class="card-header"  style="text-align: center;font-size:10;color: white">{{cards.header}}</div>
+                  <div class="card-title">
+                    <a ng-href="#!{{cards.section}}">
+                      <img ng-src="{{cards.url}}"  class="img img-responsive card-image"></img>
+                    </a>
+                  </div>
+                <div class="card-footer"  style="text-align: center;font-size:10;color: white"> {{cards.desc}} </div>
               </div>
-        </div>
+        </div>    
     </div>
 
   </div>
 
-  <div class="wraper-sidebar col-sm-2">
-      <div class="sidebar-items">
+  <div class="wraper-sidebar col-xs-12 col-sm-2 col-md-2 col-lg-2">
+      <!--div class="sidebar-items">
         <img src="images/product_main_sidebar_1.png" class="image image-responsive img-sidebar">
         <p> Product Description 1 </p>
         <p> {{kibiz_logo}} </p>
@@ -90,12 +90,7 @@
         <img src="images/product_main_sidebar_4.png" class="image image-responsive img-sidebar">
         <p> Product Description 1 </p>
         <p> Product Price : 45$ </p>
-      </div>
-      <div class="sidebar-items">
-        <img src="images/product_main_sidebar_5.png" class="image image-responsive img-sidebar">
-        <p> Product Description 1 </p>
-        <p> Product Price : 45$ </p>
-      </div>
+      </div-->
     </div>
 </div>
 </div>
