@@ -11,7 +11,7 @@
      <!-- This section to show the map -->
    <div class="col-sm-8 addresscontainer1 pull-right">
     <div class="col-xs-12 col-sm-12">
-      <input type="text" name="mapaddress" ng-model="mapaddress" class="input-lg inputheadedit">
+      <input type="text" name="mapaddress" ng-model="contact.mapaddress" class="input-lg inputheadedit" ng-change="contact.callGeoCode()">
     </div>
     <div class="map" id="mapviewer" ng-model="mapviewer" class="locationmap">
     </div>

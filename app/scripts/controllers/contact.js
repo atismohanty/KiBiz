@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('kibizApp')
-		.controller('ContactCtrl', ['$scope','$http','localStorageService', function($scope,$http,localStorageService)
+		.controller('ContactCtrl', ['$scope','$http','$timeout','localStorageService', function($scope,$http,$timeout,localStorageService)
 		{
 
 		this.mapaddress="";
@@ -9,6 +9,7 @@ angular.module('kibizApp')
 		this.mapaddress2="";
 		this.mapaddress3="";
 		this.mapaddress4="";
+		var vm = this;
 		
 		
 		 this.loadContactPartials = function()
@@ -149,6 +150,60 @@ angular.module('kibizApp')
 			{
 				alert('Geolocation not supported in your browser');
 			}
+		}
+		this.callGeoCode = function ()
+		{
+			
+			$timeout(geoCoder(),7000);
+		};
+
+		function geoCoder()
+		{
+			
+			var mapObj = document.getElementById("mapviewer");
+			var address = vm.mapaddress;
+			if (address==" "|| address==null) 
+			{
+				console.log(address);
+				geoLoc();
+			}
+			else if (address.length < 10) 
+			{
+
+			}
+
+			else
+			{	
+				var geoCoder = new google.maps.Geocoder();
+				var pos= new google.maps.LatLng(12.9546432, 77.6580367);
+				var mapOpt = { zoom:10, center:pos , mapTypeId:'roadmap' };
+				var mapLoc = new google.maps.Map(mapObj, mapOpt); 
+				geoCoder.geocode(
+					{'address':address},
+						function(results,status )
+						{
+							if (status=='OK') 
+								{
+						console.log('results' + results);
+								mapLoc.setCenter(results[0].geometry.location);
+								mapLoc.setZoom(15);
+								var pos = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
+								var marker = new google.maps.Marker(
+									{
+										map: mapLoc,
+										position:pos,
+										animation: google.maps.Animation.DROP
+									});
+								}
+							else
+								{
+									this.mapaddress = "Error in fetching the data";
+								}
+						}
+
+					);
+			}
+			$timeout.cancel();
 		}
 
 		function showPosition()

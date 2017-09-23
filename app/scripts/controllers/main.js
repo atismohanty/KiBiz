@@ -81,19 +81,10 @@ $http(
     
 function navigateSection( primaryPath, subpath, event)
 {
-
-console.log(primaryPath);
 //navContact.setContactPartials(subpath);
-$location.path('/' + primaryPath);
+$location.path('/contacts');
+console.log($location.path());
 
-
-
-}
-
-
-function addNum(a, b)
-{
-  console.log(a+b);
 }
 
 
@@ -114,8 +105,12 @@ $(document).ready(function(){
 
 $(document).ready(function()
 {
-$("#submnu001").click( function(event){event.preventDefault();});
-$("#submnu001").click (navigateSection('contacts','views/partials/newcontact.html'));
+
+$("#submnu001").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('contacts','views/partials/newcontact.html');
+});
 });
 
  }]);
