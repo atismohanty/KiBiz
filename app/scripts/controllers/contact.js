@@ -21,6 +21,12 @@ angular.module('kibizApp')
 							var viewCurrent = localStorageService.get('subViewCurr');
 							console.log(viewCurrent);
 							this.selectedView= viewCurrent;
+
+						}
+					else
+						{
+							console.log(this.selectedView);
+							overridelocStorage = "" ;
 						}
 				}
 				else
@@ -59,6 +65,8 @@ angular.module('kibizApp')
 				else if (this.selectedView=='views/partials/contactlocation.html') 
 				{
 						geoLoc();
+						var mapObj = document.getElementById("mapviewer");
+						google.maps.event.trigger(mapObj, 'resize');
 				}
 				
 				
@@ -69,7 +77,7 @@ angular.module('kibizApp')
 		function loadContactList()
 			{
 				
-
+				
 				$http(
 					{
 					method:'GET',
@@ -80,16 +88,27 @@ angular.module('kibizApp')
 					function success(response)
 					{
 						$scope.contactdata = response.data;
+						//this.selectedView = 'views/partials/searchcontact.html';
 					},
 					function failure(response)
 					{
 						$scope.contactdata = response.data;
 					}
 					);
-					
+			//vm.hideLoader = true;
+
+				
+				
 			}
-
-
+			
+		
+		angular.element("#tab-con-list").ready()
+		{
+			//$timeout( loadContactList(),100);
+			vm.hideLoader = true;
+			//vm.loadTableRows = true;
+		};
+		
 
 		this.selectView = function(param)
 			{
@@ -101,11 +120,19 @@ angular.module('kibizApp')
 					
 				}
 				
-					this.selectedView =  param;
+				this.selectedView =  param;
 
 				if (param=="views/partials/searchcontact.html") 
 				{
-					loadContactList();
+					//this.selectedView = 'views/partials/pageloadtemp.html';
+					vm.loaderPath = 'images/Eclipse.svg';
+					vm.hideLoader = false;
+					vm.loadTableRows = true;
+					$timeout( loadContactList(),1000);
+				
+					//$timeout( loadContactList(),1000);
+					//loadContactList();
+					//this.selectedView = 'views/partials/searchcontact.html';
 				}
 				else if (this.selectedView=='views/partials/contactdetails.html') 
 				{
@@ -113,7 +140,10 @@ angular.module('kibizApp')
 				}
 				else if (this.selectedView=='views/partials/contactlocation.html') 
 				{
-						geoLoc();
+					$timeout(geoLoc(), 1000);
+						//geoLoc();
+						//var mapObj = document.getElementById("mapviewer");
+						//google.maps.event.trigger(mapObj, 'resize');
 				}
 				
 			
@@ -144,6 +174,7 @@ angular.module('kibizApp')
 				};
 
 				watchId = navigator.geolocation.watchPosition(showPosition, showError, option);
+				
 
 			}
 			else
@@ -203,6 +234,24 @@ angular.module('kibizApp')
 
 					);
 			}
+			mapLoc.addListener('click', function(e)
+				{
+		 			var geoCoder = new google.maps.Geocoder;
+		 			geoCoder.geocode(
+		 				{'location':{lat:e.latLng.lat(), lng:e.latLng.lng()}}, function(results,status)
+		 				{
+		 					if (status=='OK') 
+		 					{
+		 						var address  = results[0].formatted_address;
+		 						addAddress(address,e);
+		 					}
+		 					else
+		 					{
+		 						alert('Address can not be fetched due to status error' + status);
+		 					}
+		 				});
+
+				});
 			$timeout.cancel();
 		}
 
@@ -221,6 +270,24 @@ angular.module('kibizApp')
 			title: "My Location"
 		};
 		var marker = new google.maps.Marker(markerPos);
+		mapLoc.addListener('click', function(e)
+				{
+		 			var geoCoder = new google.maps.Geocoder;
+		 			geoCoder.geocode(
+		 				{'location':{lat:e.latLng.lat(), lng:e.latLng.lng()}}, function(results,status)
+		 				{
+		 					if (status=='OK') 
+		 					{
+		 						var address  = results[0].formatted_address;
+		 						addAddress(address,e);
+		 					}
+		 					else
+		 					{
+		 						alert('Address can not be fetched due to status error' + status);
+		 					}
+		 				});
+
+				});
 		}
 		function showError(error)
 		{
@@ -246,6 +313,42 @@ angular.module('kibizApp')
 
 		}
 
+		var addAddress = function(address, e)
+		{
+			var lat = e.latLng.lat();
+			var lng = e.latLng.lng();
+			var resultset = "";
+			for ( var i=1 ; i<6 ; i++ )
+				{
+
+					var latlng1 = document.getElementById('maplat'+ i).value;
+					latlng1 = latlng1.split(",",2);
+					if (lat==latlng1[0] && lat==latlng1[1]) 
+					{
+						document.getElementById('maplat'+ i).innerHTML  = lat + "," + lng;
+						resultset = 1 ;
+					}
+					
+					if (resultset=="" && latlng1=="") 
+					{
+						document.getElementById('maplat'+ i).value  = lat + "," + lng;
+						document.getElementById('mapaddress'+ i).value  = address;
+						resultset = 1 ;
+					}
+				}
+			if (resultset=="") 
+				{
+					for ( var i=1 ; i<5 ; i++ )
+					{
+						var j = i+1;
+						document.getElementById('maplat'+ i).value = document.getElementById('maplat'+j).value;
+						document.getElementById('mapaddress'+ i).value = document.getElementById('mapaddress'+j).value;		
+					}
+						document.getElementById('maplat5').value = lat + "," + lng;
+						document.getElementById('mapaddress5').value = address;
+				}
+		}
+		
 
 
 
@@ -266,12 +369,16 @@ $(document).ready(function(){
 
 //Create a service for sharing the location related information
 
-angular.module('kibizApp').service('navContact', function(localStorageService)
+angular.module('kibizApp').service('navModule', function(localStorageService)
 	{
 		{
-		this.setContactPartials = function(param)
+		this.setModulePartials = function(param)
 			{
 				this.selectedView = param;
+				if (localStorageService.isSupported) 
+				{
+					localStorageService.set('subViewCurr',param,'localStorage');
+				}
 			}			
 		}
 	});

@@ -16,6 +16,7 @@ html,body
   padding-top:3px;
   padding-bottom:3px;
   outline: none;
+  display: none;
 }
 .formsearch:focus
 {
@@ -87,7 +88,6 @@ margin: 0px;
   position: relative;
   margin: 0px;
   width: 100%;
-
 }
 .wraper-sidebar
 {
@@ -179,10 +179,11 @@ height: 100%;
 }
 .wrapper-middle-content
 {
+border-left: 1px solid black;
 margin: 0px;
 padding: 0px;
 position: relative;
-background-color: transparent;
+background-color: black;
 }
 .carousel
 {
@@ -271,8 +272,12 @@ background-color: transparent;
 }
 .card-footer
 {
-  height: 10%;
+  position: static;
   width: 100%;
+  z-index: 100;
+  text-align: center;
+  font-size: 10;
+  color: white;
 }
 .card-image
 {
@@ -296,12 +301,12 @@ body {
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
+header,
+footer {
   margin: 0px;
   padding:0px;
-
+  background-color: white;
+  bottom: 0px;
 }
 
 /* Custom page header */
@@ -435,4 +440,86 @@ body {
   text-shadow: none;
   color: #333;
   border: 1px solid #ddd;
+}
+.plain-list
+{
+  list-style-type: none;
+  width: 100%;
+  border:none;
+  padding-left: 10px;
+  padding-top: 10px;
+  display: inline-block;
+  line-height: 20px;
+  font-weight: bold;
+  color: white;
+}
+.row
+{
+  
+  border: none;
+  padding: 0px;
+  margin-top: 10px;
+  float: left;
+  height: 30%;
+  line-height: 30%;
+}
+.floatpanel
+{
+background-color: blue;
+z-index: 100;
+border: 1px solid ghostwhite;
+position: relative;
+/*left: 25%;*/
+height: 40%;
+padding: 5%;
+margin-top: 10%;
+border-radius: 3px;
+}
+.logintext
+{
+  
+  height: 40px;
+  line-height: 40px;
+  font-family: verdana;
+  font-size: 16px;
+  background-color: ghostwhite;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 5px;
+  width: 100%;
+}
+.loginpanel
+{
+  
+  height: 150px;
+  line-height: 150px;
+  display: block;
+  padding: 10px;
+  
+}
+.regpanel
+{
+  
+  height: 300px;
+  display: block;
+  padding: 10px;
+  
+  border:none;
+
+}
+.btnlink
+{
+  background-color: transparent;
+  border:none;
+  font-weight: bold;
+  font-style: italic;
+  color:white;
+  height:30px;
+  line-height: 30px;
+  padding-top: 10px;
+}
+.btnlink:active
+{
+  border:none;
+  box-shadow: none;
 }

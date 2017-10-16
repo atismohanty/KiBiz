@@ -1,0 +1,45 @@
+<div class="wraper-main col-xs-12 col-sm-12 col-lg-12">
+
+    
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+    <div class="floatpanel col-xs-12 col-sm-6 col-md-6 col-lg-6">
+    
+      <div class="loginpanel col-xs-12 col-sm-12 col-md-12 col-lg-12" id="loginpanel" ng-hide="main.switchLoginPanel">
+ 
+        <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border:none;padding: 0px;margin:0px;">
+          <input type="text" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="loginname" placeholder="Login Name/ User Name" ng-model="main.username">
+          <input type="password" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="password" placeholder="Password" ng-model="main.password">
+        </div>
+        <span style="padding: 0px ; margin: 0px; color: red;  font-style: italic;font-size: 14 width:400px;height:20px;background-color: white;z-index: 100" ng-model="main.errorData"></span>
+        <div class="row col-xs-12 col-sm-12 col-md-12" style="border:none;padding: 0px;margin:0px; margin-top: 10px;">
+          
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+            <input type="button" class="btn btn-danger col-xs-6 col-sm-5 col-md-5 col-lg-5" ng-click="main.reSet()"  value="Reset">
+            <input type="button" class="btn btn-info col-xs-6 col-sm-5 col-md-5 col-lg-5" ng-click="main.validateUser()" value="Login">
+          </div>
+          <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right" >
+            <button class="btnlink" ng-click="main.showRegPanel()"> New User Registration </button>
+          </div>
+        </div>
+       
+      </div>
+
+      <!-- Panel for registration-->
+      <div class="regpanel col-xs-12 col-sm-12 col-md-12 col-lg-12" id = "regpanel" ng-show="main.switchLoginPanel">
+        <div class="row col-xs-12 col-sm-12 col-lg-12 col-md-12 col-lg-12" style="border:none;padding: 0px;margin:0px;">
+          <input type="text" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="nameFirst" placeholder="First Name" ng-model="nameFirst">
+          <input type="text" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="nameLast" placeholder="Last Name" ng-model="nameLast">
+          <input type="email" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="emailAddress" placeholder="Email Address" ng-model="email">
+          <input type="text" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="username" placeholder="User Name" ng-model="username">
+          <input type="password" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="password" placeholder="Password" ng-model="password">
+        </div>
+        <div class="row col-xs-12 col-sm-12 col-lg-12 col-md-12" style="border:none;padding: 0px;margin:0px;">
+            <button class="btn btn-primary col-xs-3 col-sm-3 col-md-3" ng-click="main.showRegPanel()" style="margin-right:2px;"> Login</button>
+            <button class="btn btn-primary col-xs-3 col-sm-3 col-md-3" ng-click="main.reSet()" style="margin-right:2px;"> Reset</button>
+            <button class="btn btn-primary col-xs-3 col-sm-3 col-md-3" ng-click="main.Register()"> Register</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
+
+</div>

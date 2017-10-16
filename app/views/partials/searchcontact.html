@@ -1,5 +1,8 @@
 <div class="wrapper-search col-sm-12">
-
+  <div class ="loaderSpinner" ng-hide="{{contact.hideLoader}}">
+    <img ng-src ="{{contact.loaderPath}}" alt="Loading..." width="100px" height="100px" class="loaderImage" >
+  </div>
+      
     <!--search header part -->
   <div class="search-header col-sm-12">
         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 4px 0px 4px;">
@@ -20,7 +23,7 @@
   </div>
 
   <div class="container col-sm-12">
-    <table class="table table-bordered table-responsive table-striped col-xs-12">
+    <table class="table table-bordered table-responsive table-striped col-xs-12" id="tab-con-list">
       <tr>
         <th class="col-md-2 col-lg-2"> Contact Name </th>
         <th class="col-md-2 col-lg-2"> Contact Type </th>
@@ -29,10 +32,10 @@
         <th class="col-md-2 col-lg-3"> Contact Phone </th>
         <th class="col-md-1 col-lg-1"></th>
       </tr>
-      </tr>
+      
 
-      <tr id="row{{$index}}" ng-repeat="contact in contactdata | filter:contact.searchText | limitTo:50" class="table-row">
-        <td><input type="text" ng-model="contact.first_name + ' ' + contact.last_name" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
+      <tr id="row{{$index}}" ng-repeat="contact in contactdata | filter:contact.searchText | limitTo:1000" class="table-row">
+        <td><input type="text" ng-value="contact.first_name +' ' + contact.last_name" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
         <td><input type="text" ng-model="contact.department" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
         <td><input type="text" ng-model="contact.address" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
         <td><input type="text" ng-model="contact.email" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>

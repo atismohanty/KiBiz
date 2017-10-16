@@ -2,7 +2,7 @@
 
   <div class="wraper-sidebarmenu col-xs-12 col-sm-12 col-md-2 col-lg-2">
                                  <!-- Side bar menus -->
-    <div class="panel-group col-xs-12 col-sm-12" id="accordion">
+      <div class="panel-group col-xs-12 col-sm-12" id="accordion">
         <div class="panel panel-menu"> 
             <ul class="list-group">
               <li>
@@ -14,10 +14,8 @@
           <ul class="list-group">
             <li"><button class="menuitem-btn" ng-click="contact.selectView('views/partials/searchcontact.html')"> Search Contact</button> </li>
             <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/newcontact.html')"> New Contact</button></li>
-
-          </ul>
-        </div>
-                                
+            </ul>
+        </div>                      
         <div class="panel panel-menu"> 
             <ul class="list-group">
               <li>
@@ -25,7 +23,7 @@
               </li>
             </ul>
         </div>
-       <div id="managecontact" class="panel-collapse collapse in">
+        <div id="managecontact" class="panel-collapse collapse in">
           <ul class="list-group">
             <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactdetails.html')"> Contact Details</button> </li>
             <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactlocation.html')"> Contact Locations</button></li>
@@ -33,12 +31,13 @@
 
           </ul>
         </div>
+      </div>
+  </div>
+
+  <div class="wrapper-middle-content-product col-xs-12 col-sm-12 col-md-10 col-lg-10">
+    <div ng-include="contact.selectedView"> 
     </div>
   </div>
 
-  <div class="wrapper-middle-content col-xs-12 col-sm-12 col-md-10 col-lg-10">
-  <p ng-model="selectedView" ng-hide="1"></p>
-  <div ng-include="contact.selectedView"></div>
-  </div>
    
 </div>

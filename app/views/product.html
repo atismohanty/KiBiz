@@ -1,0 +1,47 @@
+<div class="wrapper-main col-sm-12 col-xs-12 col-lg-12" ng-init="product.loadProductPartials()">
+
+  <div class="wraper-sidebarmenu col-xs-12 col-sm-12 col-md-2 col-lg-2">
+                                 <!-- Side bar menus -->
+    <div class="panel-group col-xs-12 col-sm-12" id="accordion">
+        <div class="panel panel-menu"> 
+            <ul class="list-group">
+              <li>
+                <button class="menuitem-btn-main" id="#contactaction" data-toggle="collapse" data-target="#contactaction" data-parent="accordion"> Product Action </button>
+              </li>
+            </ul>
+        </div>
+        <div id="contactaction" class="panel-collapse collapse in">
+          <ul class="list-group">
+            <li>
+              <button class="menuitem-btn" ng-click="product.selectView('views/partials/searchproduct.html')"> Search Product</button>
+            </li>
+            <li>
+              <button class="menuitem-btn" ng-click="contact.selectView('views/partials/newcontact.html')"> New Product</button>
+            </li>
+          </ul>
+        </div>
+                                
+        <div class="panel panel-menu"> 
+            <ul class="list-group">
+              <li>
+                <button class="menuitem-btn-main" id="#contactaction" data-toggle="collapse" data-target="#managecontact" data-parent="accordion"> Manage Product </button>
+              </li>
+            </ul>
+        </div>
+       <div id="managecontact" class="panel-collapse collapse in">
+          <ul class="list-group">
+            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactdetails.html')"> Product Details</button> </li>
+            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactlocation.html')"> Product Images</button></li>
+            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/searchcontact.html')"> Product Prices</button></li>
+
+          </ul>
+        </div>
+    </div>
+  </div>
+
+  <div class="wrapper-middle-content-product col-xs-12 col-sm-12 col-md-10 col-lg-10">
+  <p ng-model="selectedView" ng-hide="1"></p>
+  <div ng-include="product.selectedView"></div>
+  </div>
+   
+</div>

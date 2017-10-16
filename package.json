@@ -43,7 +43,9 @@
   "dependencies": {
     "angular-google-maps": "^2.4.1",
     "angular-local-storage": "^0.6.0",
+    "create-file": "^1.0.1",
     "google-maps": "^3.2.1",
-    "localstorage": "^0.1.0"
+    "localstorage": "^0.1.0",
+    "product": "^1.2.2"
   }
 }

@@ -9,7 +9,7 @@
     
 
      <!-- This section to show the map -->
-   <div class="col-sm-8 addresscontainer1 pull-right">
+   <div class="col-xs-12 col-sm-8 addresscontainer1 pull-right">
     <div class="col-xs-12 col-sm-12">
       <input type="text" name="mapaddress" ng-model="contact.mapaddress" class="input-lg inputheadedit" ng-change="contact.callGeoCode()">
     </div>
@@ -21,18 +21,28 @@
    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 addresscontainer">
       <h4> Location List </h4>
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <input type="textarea" name="map-address1" ng-model="mapaddress1" class="input-lg" readonly="readonly">
+        <textarea rows="4" cols="30" wrap="hard" name="map-address1" id="mapaddress1" ng-model="mapaddress1" class="input-lg" readonly="readonly" ></textarea>
+        <input type="text" id="maplat1" style="display: none" >
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <input type="textarea" name="map-address1" ng-model="mapaddress2" class="input-lg" readonly="readonly">
+        <textarea rows="4" cols="30" wrap="hard" name="map-address1" id="mapaddress2" ng-model="mapaddress2" class="input-lg" readonly="readonly"></textarea>
+        <input type="text" id="maplat2" style="display: none" >
       </div>
       <div class="col-xs-12 col-sm-12 col-md-12">
-         <input type="textarea" name="map-address1" ng-model="mapaddress3" class="input-lg" readonly="readonly">
+         <textarea rows="4" cols="30" wrap="hard" name="map-address1" id="mapaddress3" ng-model="mapaddress3" class="input-lg" readonly="readonly"></textarea>
+         <input type="text" id="maplat3" style="display: none" >
       </div>
        <div class="col-xs-12 col-sm-12 col-md-12">
-        <input type="textarea" name="map-address4" ng-model="mapaddress4" class="input-lg" readonly="readonly">
+        <textarea rows="4" cols="30" wrap="hard" name="map-address4" id="mapaddress4" ng-model="mapaddress4" class="input-lg" readonly="readonly"></textarea>
+        <input type="text" id="maplat4" style="display: none" >
       </div>
-   </div>
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <textarea rows="4" cols="30" wrap="hard" name="map-address5" id="mapaddress5" ng-model="mapaddress5" class="input-lg" readonly="readonly"></textarea>
+        <input type="text" id="maplat5" style="display: none" >
+      </div>
+    </div>
+       
+   
     
   </div>
 </div>

@@ -8,13 +8,14 @@
  * Controller of the kibizApp
  */
 angular.module('kibizApp')
-  .controller('MainCtrl',['$http','$scope','$location','navContact', function ($http,$scope,$location,navContact) {
+  .controller('MainCtrl',['$http','$scope','$location','localStorageService','navModule', function ($http,$scope,location,localStorageService,navModule) {
     
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
+    this.errorData="";
     this.menu1 = "New Product";
    this.kibiz_logo = "images/HeaderLogo.png";
    this.carouselimg1 = "images/Carousel1.jpg";
@@ -79,13 +80,72 @@ $http(
 
 //$scope.load = sideBarImage();
     
-function navigateSection( primaryPath, subpath, event)
+function navigateSection( primaryPath, subpath)
 {
-//navContact.setContactPartials(subpath);
-$location.path('/contacts');
-console.log($location.path());
+
+//$location.path('/contacts');
+window.location.assign('#!/'+ primaryPath);
+navModule.setModulePartials(subpath);
+//console.log($location.path());
 
 }
+
+this.showRegPanel = function()
+{
+  this.switchLoginPanel = ! this.switchLoginPanel;
+  console.log("switchpanel");
+}
+
+
+this.validateUser = function()
+{
+  var userlist ; 
+  var usererror;
+  var validUser ;
+  var vm = this;
+  $http({
+    method:'GET',
+    url:'json/user.json'
+      })
+  .then( function success(result)
+    {
+      userlist = result.data; 
+
+       for (var i = 0 ; i < userlist.length ; i++)
+        {
+          if (userlist[i].name  == vm.username && userlist[i].password==vm.password) 
+            {
+              if (localStorageService.isSupported) 
+                {
+                  localStorageService.set('validUser', true ,'localStorage');
+                  validUser = true;
+                  vm.userName = userlist[i].name;
+                  vm.access = userlist[i].userAccess;
+                  vm.id = userlist[i].userid;
+                  vm.fullname = userlist[i].fullname;
+                  var d = new Date();
+                  vm.loggedinTime= d.getHours() + ':' + d.getMinutes() + ":" + d.getSeconds();
+                }
+             }
+         }
+
+       if (validUser) 
+        {
+
+          console.log("validation passed");
+          window.location.assign('#!/');
+        }
+        else
+        {
+          vm.errorData = "Incorrect username or password";
+        }
+        
+    },function failure(result)
+        {
+          usererror = result.data;
+        });
+      }
+
 
 
 $(document).ready(function(){
@@ -110,6 +170,26 @@ $("#submnu001").click ( function(event){
   event.preventDefault();
   event.stopPropagation();
   navigateSection('contacts','views/partials/newcontact.html');
+});
+$("#submnu002").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('contacts','views/partials/searchcontact.html');
+});
+$("#submnu003").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('contacts','views/partials/contactdetails.html');
+});
+$("#submnu005").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('contacts','views/partials/contactlocation.html');
+});
+$("#submnu007").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('products','views/partials/searchproduct.html');
 });
 });
 

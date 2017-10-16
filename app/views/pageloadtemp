@@ -1,0 +1,6 @@
+<div class="wrapper-main">
+
+  <div class="screenloaddiv">
+    <img src ="app/images/Eclipse.svg" alt="Loading..." width="100%" height="100%"></image>
+  </div>
+</div>

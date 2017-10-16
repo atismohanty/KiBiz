@@ -40,8 +40,36 @@ angular
         controllerAs: 'contact',
         caseInsensitiveMatch:true
       })
+      .when('/products', {
+        templateUrl: 'views/product.html',
+        controller: 'ProductCtrl',
+        controllerAs: 'product',
+        caseInsensitiveMatch:true
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main',
+        caseInsensitiveMatch:true
+      })
+      .when('/dashboard', {
+         resolve:
+        {
+          pathValidation:function($location)
+            {
+              if (localStorageService.get('validUser')==true) 
+                {
+                  window.location.assign('/');
+                }
+            }
+        },
+        templateUrl: 'main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'main',
+        caseInsensitiveMatch:true
+      })
       .otherwise({
-        redirectTo: '/',
+        redirectTo:'/',
         controller: 'MainCtrl',
         controllerAs:'main',
         caseInsensitiveMatch:true
