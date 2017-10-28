@@ -15,8 +15,10 @@ angular.module('kibizApp')
       'AngularJS',
       'Karma'
     ];
+    var vm = this;
     this.errorData="";
     this.menu1 = "New Product";
+
    this.kibiz_logo = "images/HeaderLogo.png";
    this.carouselimg1 = "images/Carousel1.jpg";
    this.carouselimg2 = "images/Carousel2.jpg";
@@ -58,37 +60,38 @@ angular.module('kibizApp')
 
 function sideBarImage()
 {
-$http(
-	{
-		method:'GET',
-		url:'https://api.jumpseller.com/v1/products.json?login=1bdae2ae3765ab2764fff0946d902e64&authtoken=3b0787f580911f25abfa481ed500dfb4'	
-	}
-	).then(function(response)
-			{
-				console.log(response.data);
-				$scope.productResponse = response.status;
-				$scope.productData = response.data;
-				
-			},function(response)
-			{
-			this.productData = 'Response Failed';
-			console.log("failed");
-			}
-		); //end of then function scopr
-	
-	}
-
-//$scope.load = sideBarImage();
+  $http(
+  	{
+  		method:'GET',
+  		url:'https://api.jumpseller.com/v1/products.json?login=1bdae2ae3765ab2764fff0946d902e64&authtoken=3b0787f580911f25abfa481ed500dfb4'	
+  	})
+  .then(
+      function(response)
+  			{
+  				console.log(response.data);
+  				$scope.productResponse = response.status;
+  				$scope.productData = response.data;
+  				
+  			},
+      function(response)
+  			{
+    			this.productData = 'Response Failed';
+    			console.log("failed");
+  			}
+		    ); //end of then function scopr
+}
     
 function navigateSection( primaryPath, subpath)
 {
 
-//$location.path('/contacts');
-window.location.assign('#!/'+ primaryPath);
-navModule.setModulePartials(subpath);
-//console.log($location.path());
+  //$location.path('/contacts');
+  navModule.setModulePartials(subpath);
+  window.location.assign('#!/'+ primaryPath);
 
+  console.log(subpath);
 }
+
+
 
 this.showRegPanel = function()
 {
@@ -97,12 +100,11 @@ this.showRegPanel = function()
 }
 
 
-this.validateUser = function()
+this.validateUser = function(event)
 {
   var userlist ; 
   var usererror;
   var validUser ;
-  var vm = this;
   $http({
     method:'GET',
     url:'json/user.json'
@@ -125,6 +127,7 @@ this.validateUser = function()
                   vm.fullname = userlist[i].fullname;
                   var d = new Date();
                   vm.loggedinTime= d.getHours() + ':' + d.getMinutes() + ":" + d.getSeconds();
+                  vm.stafImage = "images/stafImage.jpg";
                 }
              }
          }
@@ -144,8 +147,19 @@ this.validateUser = function()
         {
           usererror = result.data;
         });
-      }
+  
+}
 
+this.triggerCheck = function(e)
+{
+  //var keyNum = String.fromCharCode(Event.keyCode||Event.which) ;
+  console.log(event.charCode);
+  
+  if (event.charCode==13) 
+  {
+    this.validateUser();
+  }
+}
 
 
 $(document).ready(function(){
@@ -190,6 +204,11 @@ $("#submnu007").click ( function(event){
   event.preventDefault();
   event.stopPropagation();
   navigateSection('products','views/partials/searchproduct.html');
+});
+$("#submnu008").click ( function(event){
+  event.preventDefault();
+  event.stopPropagation();
+  navigateSection('products','views/partials/newproduct.html');
 });
 });
 

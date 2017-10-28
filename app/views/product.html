@@ -6,17 +6,17 @@
         <div class="panel panel-menu"> 
             <ul class="list-group">
               <li>
-                <button class="menuitem-btn-main" id="#contactaction" data-toggle="collapse" data-target="#contactaction" data-parent="accordion"> Product Action </button>
+                <button class="menuitem-btn-main" id="#productaction" data-toggle="collapse" data-target="#productaction" data-parent="accordion"> Product Action </button>
               </li>
             </ul>
         </div>
-        <div id="contactaction" class="panel-collapse collapse in">
+        <div id="productaction" class="panel-collapse collapse in">
           <ul class="list-group">
             <li>
               <button class="menuitem-btn" ng-click="product.selectView('views/partials/searchproduct.html')"> Search Product</button>
             </li>
             <li>
-              <button class="menuitem-btn" ng-click="contact.selectView('views/partials/newcontact.html')"> New Product</button>
+              <button class="menuitem-btn" ng-click="product.selectView('views/partials/newproduct.html')"> New Product</button>
             </li>
           </ul>
         </div>
@@ -24,15 +24,15 @@
         <div class="panel panel-menu"> 
             <ul class="list-group">
               <li>
-                <button class="menuitem-btn-main" id="#contactaction" data-toggle="collapse" data-target="#managecontact" data-parent="accordion"> Manage Product </button>
+                <button class="menuitem-btn-main" id="#productaction" data-toggle="collapse" data-target="#manageproduct" data-parent="accordion"> Manage Product </button>
               </li>
             </ul>
         </div>
-       <div id="managecontact" class="panel-collapse collapse in">
+       <div id="manageproduct" class="panel-collapse collapse in">
           <ul class="list-group">
-            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactdetails.html')"> Product Details</button> </li>
-            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/contactlocation.html')"> Product Images</button></li>
-            <li><button class="menuitem-btn" ng-click="contact.selectView('views/partials/searchcontact.html')"> Product Prices</button></li>
+            <li><button class="menuitem-btn" ng-click="product.selectView('views/partials/productdetails.html')"> Product Details</button> </li>
+            <li><button class="menuitem-btn" ng-click="product.selectView('views/partials/productlocation.html')"> Product Images</button></li>
+            <li><button class="menuitem-btn" ng-click="product.selectView('views/partials/searchproduct.html')"> Product Prices</button></li>
 
           </ul>
         </div>

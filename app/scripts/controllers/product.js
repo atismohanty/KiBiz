@@ -32,8 +32,9 @@ angular.module('kibizApp')
 				{
 					loadProductList();
 				}
-				else if (this.selectedView=="views/partials/newproduct.html")
+				else if (this.selectedView=="views/partials/searchproductgrid.html")
 				{
+					loadProductList();
 				}
 				else if (this.selectedView=='views/partials/productdetails.html') 
 				{
@@ -123,21 +124,3 @@ $(document).ready(function(){
 
 		}]);
 
-//Create a service for sharing the location related information
-/*
-angular.module('kibizApp').service('navContact', function(localStorageService)
-	{
-		{
-		this.setProductPartials = function(param)
-			{
-				this.selectedView = param;
-				if (localStorageService.isSupported) 
-				{
-					localStorageService.set('subViewPrd',param,'localStorage');
-					
-					
-				}
-			}			
-		}
-	});
-*/

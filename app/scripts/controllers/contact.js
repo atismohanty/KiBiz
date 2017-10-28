@@ -77,6 +77,7 @@ angular.module('kibizApp')
 		function loadContactList()
 			{
 				
+				vm.hideLoader = false;
 				
 				$http(
 					{
@@ -95,7 +96,7 @@ angular.module('kibizApp')
 						$scope.contactdata = response.data;
 					}
 					);
-			//vm.hideLoader = true;
+				vm.hideLoader = true;
 
 				
 				

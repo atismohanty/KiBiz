@@ -2,13 +2,13 @@
 
   <div class="wraper-sidebar col-xs-12 col-sm-4 col-md-4 col-lg-4">
   
-      <div class="row col-xs-12 col-sm-4 col-md-4">
-        <image src="" alt="Staff Image"></image>
+      <div class="col-xs-12 col-sm-5 col-md-5">
+        <image ng-src="{{main.stafImage}}" alt="Staff Image" width="150" height="150"></image>
       </div>
-      <div class="row col-xs-12 row col-sm-8 col-md-8">
+      <div class="col-xs-12 row col-sm-7 col-md-7 pull-right" style="margin: 0px 0px 0px 0px";>
         <ul class="plain-list">
           <li>Staf ID: {{main.id}}</li>
-          <li>user Name: {{main.name}}</li>
+          <li>{{main.userName}}</li>
           <li>Staff Full Name: {{main.fullname}}</li>
           <li>Staff Access: {{main.access}}</li>
           <li>LoggedInTime: {{main.loggedinTime}}</li>

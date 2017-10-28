@@ -1,0 +1,46 @@
+<div class="wrapper-search col-sm-12">
+   <div class ="loaderSpinner" ng-hide="{{product.hideLoader}}">
+      <img ng-src ="{{product.loaderPath}}" alt="Loading..." width="100px" height="100px" class="loaderImage" >
+    </div>
+    <!--search header part -->
+  <div class="search-header col-sm-12">
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 4px 0px 4px;">
+        <input type=text class="search-text" placeholder="Product Name" ng-model="product.searchText.productname">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="Product Catagory" ng-model="product.searchText.productcategory">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="vendor Name" ng-model="product.searchText.vendorname">
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" style="padding: 0px 5px 0px 5px;">
+        <input type=text class="search-text" placeholder="Product SKU" ng-model="product.searchText.sku">
+        </div>
+  </div>
+
+  <div class="container col-sm-12">
+    <div class="row col-xs-12 col-sm-12 col-lg-12" style="border:1px solid #ddx; display: block;padding:0px; margin: 1px 0px 0px 0px;">
+      <div class="col-xs-8 col-sm-8 col-md-10 col-lg-10"></div>
+      <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 pull-right" style="padding:2px 0px 2px 1px; display: inline-block; width: 70px">
+            <button type="button" ng-click="product.selectView('views/partials/searchproduct.html')" class="col-xs-12 col-sm-12 table-button">
+              <span class="glyphicon glyphicon-th-list"></span>
+            </button>
+            <button class="col-xs-12 col-sm-12 table-button" ng-click="product.selectView('views/partials/searchproductgrid.html')">
+              <span class="glyphicon glyphicon-th"></span>
+            </button>
+      </div>
+    </div>
+    <div class="row col-xs-12 col-sm-12 col-lg-12" style="border:1px solid #ddx ; display: block;padding:0px; margin: 1px 0px 0px 0px;">
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 productgrid" id="row{{$index}}" ng-repeat="product in productdata | filter:product.searchText | limitTo:50" class="table-row" ng-hide="loadTableRows">
+        <image class="imagegrid" ng-src="{{product.image1}}" alt="No Preview Available">
+        <div class="infobar" ng-click="showProductPopoevr()">
+          <p class="infotext">{{product.productname}}</p>
+          <p class="infotext">{{product.retailprice}}</p>
+        </div>
+      </div>
+    </div>
+
+</div>

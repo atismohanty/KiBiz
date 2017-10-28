@@ -29,7 +29,14 @@
         <th class="col-md-3 col-lg-2"> Product Subcategory </th>
         <th class="col-md-2 col-lg-3"> Product Vendor </th>
         <th class="col-md-2 col-lg-2"> Retail Price </th>
-        <th class="col-md-1 col-lg-2">  </th>
+        <th class="col-md-1 col-lg-2" style="padding:2px 0px 2px 1px; display: inline-block; width: 70px">
+          <button type="button" ng-click="product.selectView('views/partials/searchproduct.html')" class="col-xs-12 col-sm-12 table-button">
+            <span class="glyphicon glyphicon-th-list"></span>
+          </button>
+          <button class="col-xs-12 col-sm-12 table-button" ng-click="product.selectView('views/partials/searchproductgrid.html')">
+            <span class="glyphicon glyphicon-th"></span>
+          </button>
+        </th>
       </tr>
       
 

@@ -61,6 +61,10 @@ angular
                 {
                   window.location.assign('/');
                 }
+              else
+                {
+                  window.location.assign('/login');
+                }
             }
         },
         templateUrl: 'main.html',

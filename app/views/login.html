@@ -8,7 +8,7 @@
  
         <div class="row col-xs-12 col-sm-12 col-md-12 col-lg-12" style="border:none;padding: 0px;margin:0px;">
           <input type="text" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="loginname" placeholder="Login Name/ User Name" ng-model="main.username">
-          <input type="password" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="password" placeholder="Password" ng-model="main.password">
+          <input type="password" class="logintext col-xs-12 col-sm-8 col-lg-8 col-md-8" name="password" placeholder="Password" ng-model="main.password" ng-keypress="main.triggerCheck(e)">
         </div>
         <span style="padding: 0px ; margin: 0px; color: red;  font-style: italic;font-size: 14 width:400px;height:20px;background-color: white;z-index: 100" ng-model="main.errorData"></span>
         <div class="row col-xs-12 col-sm-12 col-md-12" style="border:none;padding: 0px;margin:0px; margin-top: 10px;">

@@ -34,7 +34,7 @@
       </tr>
       
 
-      <tr id="row{{$index}}" ng-repeat="contact in contactdata | filter:contact.searchText | limitTo:1000" class="table-row">
+      <tr id="row{{$index}}" ng-repeat="contact in contactdata | filter:contact.searchText | limitTo:50" class="table-row">
         <td><input type="text" ng-value="contact.first_name +' ' + contact.last_name" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
         <td><input type="text" ng-model="contact.department" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
         <td><input type="text" ng-model="contact.address" class="col-xs-12 col-sm-12 table-text" readonly="true"></td>
