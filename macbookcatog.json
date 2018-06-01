@@ -1,0 +1,68 @@
+{
+
+"computers":[{
+"name" : "Apple MacBook Air Core i5 5th Gen - (8 GB/128 GB SSD/Mac OS Sierra) MQD32HN/A A1466  (13.3 inch, SIlver, 1.35 kg)",
+"processer": "Intel Core i5 Processor (5th Gen)",
+"ram": "8 GB DDR3 RAM"
+"os": "64 bit Mac OS Operating System",
+"hdd":"128 GB SSD",
+"display": "13.3 inch Display",
+"srcImg":"https://rukminim1.flixcart.com/image/832/832/j4irlow0/computer/j/8/c/apple-na-notebook-original-imaevdrcvuksg2zv.jpeg?q=70",
+"price": 103698
+},
+
+{
+"name" : "Apple Macbook Pro Core i7 - (16 GB/256 GB SSD/Mac OS Sierra/2 GB Graphics) MLW72HN/A  (15 inch, Silver, 1.83 kg)",
+"processer": "Intel Core i7 Processor",
+"ram": "16 GB DDR3 RAM"
+"os": "64 bit Mac OS Operating System",
+"hdd":"256 GB SSD",
+"display": "15 inch Display",
+"srcImg":"https://rukminim1.flixcart.com/image/704/704/computer/z/w/8/apple-macbook-pro-notebook-original-imaepfvjzzbnv5xk.jpeg?q=70","price": 112698
+
+},
+
+{
+"name" : "Apple MacBook Pro Core i7 5th Gen - (16 GB/256 GB SSD/OS X El Capitan) MJLQ2HN/A  (15 inch, SIlver)",
+"processer": "Intel Core i7 Processor(5th gen)",
+"ram": "16 GB DDR3 RAM"
+"os": "64 bit Mac OS Operating System",
+"hdd":"256 GB SSD",
+"display": "13.5 inch display",
+"srcImg":"https://rukminim1.flixcart.com/image/704/704/computer/v/f/z/apple-macbook-pro-notebook-original-imae9weh8guxs8uk.jpeg?q=70",
+"price": 103698
+},
+
+{
+"name" : "Apple MacBook Pro Core i7 7th Gen - (16 GB/512 GB SSD/Mac OS Sierra/2 GB Graphics) MPTT2HN/A  (15.4 inch, SPace Grey, 1.83 kg)",
+"processer": "Intel Core i7 Processor(7th gen)",
+"ram": "16 GB DDR3 RAM"
+"os": "64 bit Mac OS Operating System",
+"hdd":"256 GB SSD",
+"display": "15 inch Display",
+"srcImg":"https://rukminim1.flixcart.com/image/832/832/j4irlow0/computer/j/8/c/apple-na-notebook-original-imaevdrcvuksg2zv.jpeg?q=70",
+"price": 206698
+},
+
+{
+"name" : "Apple MacBook Pro Core i7 7th Gen - (16 GB/512 GB SSD/Mac OS Sierra/2 GB Graphics) MPTT2HN/A  (15.4 inch, SPace Grey, 1.83 kg)",
+"processer": "Intel Core i7 Processor(5th gen)",
+"ram": "16 GB DDR3 RAM"
+"os": "32 bit Mac OS Operating System",
+"hdd":"128 GB SSD",
+"display": "13.5 inch Display",
+"srcImg":"https://rukminim1.flixcart.com/image/832/832/j4irlow0/computer/j/8/c/apple-na-notebook-original-imaevdrcvuksg2zv.jpeg?q=70",
+"price": 112698
+},
+
+{
+"name" : "Apple MacBook Pro Core i7 7th Gen - (16 GB/512 GB SSD/Mac OS Sierra/2 GB Graphics) MPTT2HN/A  (15.4 inch, SPace Grey, 1.83 kg)",
+"processer": "Intel Core i7 Processor(7th gen)",
+"ram": "8 GB DDR3 RAM"
+"os": "32 bit Mac OS Operating System",
+"hdd":"128 GB SSD",
+"display": "15 inch Display",
+"srcImg":"https://rukminim1.flixcart.com/image/832/832/j4irlow0/computer/j/8/c/apple-na-notebook-original-imaevdrcvuksg2zv.jpeg?q=70",
+"price": 80698
+}
+]}
